@@ -1,0 +1,27 @@
+﻿@using Oficina.AspNet;
+@{
+    var _veiculoAplicacao = new VeiculoAplicacao();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro de veículos</title>
+</head>
+<body>
+    <h1>  Cadastro de Veículos  </h1>
+    <hr />
+    <form>
+        <label  for="marca"> Marca</label>
+        <select id="marca">
+            <option value="">Selecione</option>
+            @foreach (var marca in _veiculoAplicacao.Marcas)
+                {
+                 <option value="@marca.Id">@marca.Nome</option>
+                }
+        </select>    
+    </form>
+</body>
+</html>
